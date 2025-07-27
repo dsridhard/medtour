@@ -16,8 +16,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@400;600&display=swap"
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Optional: Tailwind Arbitrary Classes Polyfill (if needed) -->
+
 
 
     <style>
@@ -26,16 +30,12 @@
             display: none !important;
         }
 
-        body {
-            font-family: 'Lora', serif;
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
         }
 
-        h1,
-        h2,
-        h3,
-        nav,
-        .btn {
-            font-family: 'Poppins', sans-serif;
+        .font-lora {
+            font-family: 'Lora', serif;
         }
     </style>
 </head>
@@ -44,14 +44,14 @@
     <!-- Navbar -->
     <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
         <div class="container mx-auto flex justify-between items-center p-4">
-            <h1 class="text-2xl font-bold text-white" id="logo">MedTour</h1>
+            <h1 class="text-2xl font-bold text-white font-poppins" id="logo">MedTour</h1>
             <nav class="space-x-4 text-white transition-colors duration-300" id="navLinks">
-                <a href="#home" class="hover:text-blue-800">Home</a>
-                <a href="#about" class="hover:text-blue-800">About Us</a>
-                <a href="#services" class="hover:text-blue-800">Services</a>
-                <a href="#faq" class="hover:text-blue-800">FAQ</a>
-                <a href="#testimonials" class="hover:text-blue-800">Testimonials</a>
-                <a href="#contact" class="hover:text-blue-800">Contact</a>
+                <a href="#home" class="hover:text-blue-800 font-poppins ">Home</a>
+                <a href="#about" class="hover:text-blue-800 font-poppins">About Us</a>
+                <a href="#services" class="hover:text-blue-800 font-poppins">Services</a>
+                <a href="#faq" class="hover:text-blue-800 font-poppins">FAQ</a>
+                <a href="#testimonials" class="hover:text-blue-800 font-poppins">Testimonials</a>
+                <a href="#contact" class="hover:text-blue-800 font-poppins">Contact</a>
             </nav>
         </div>
     </header>
@@ -94,7 +94,7 @@
         <!-- Search Bar Overlay -->
         <div class="absolute inset-0 z-10 flex justify-center items-center">
             <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-lg max-w-xl w-full mx-4">
-                <h2 class="text-2xl font-semibold text-center mb-4 text-blue-700">Find Treatment Options</h2>
+                <h2 class="text-2xl font-semibold font-poppins  text-center mb-4 text-blue-700">Find Treatment Options</h2>
                 <form class="flex gap-2">
                     <input type="text" placeholder="Search by treatment, country..."
                         class="flex-grow p-3 rounded border border-gray-300 focus:outline-blue-500" />
@@ -124,18 +124,18 @@
 
                 <!-- Content Section (Right Side) -->
                 <div>
-                    <p class="text-4xl font-[1000] uppercase tracking-widest text-white mb-2 ">About</p>
+                    <p class="text-4xl font-[1000] uppercase font-poppins tracking-widest text-white mb-2 ">About</p>
                     <h2 class="text-4xl font-medium text-white mb-6">How Can We Help You?</h2>
                     <p class="text-lg text-white mb-4">
-                        <span class="font-semibold text-orange-100">MedTour</span> is an international medical tourism
+                        <span class="font-semibold font-lora text-orange-100">MedTour</span> is an international medical tourism
                         service that helps clients connect with top hospitals and arrange personalized treatments
                         globally.
                     </p>
-                    <p class="text-white mb-4">
+                    <p class="text-white  font-loramb-4">
                         We partner with the best clinics worldwide to ensure you receive the most favorable treatment
                         options with full transparency and care.
                     </p>
-                    <p class="text-white mb-4">
+                    <p class="text-white font-lora mb-4">
                         Our dedicated experts assist you during difficult times by identifying the right clinic,
                         handling paperwork, and staying connected throughout your recovery.
                     </p>
@@ -158,7 +158,7 @@
     <!-- Popular Treatments Section -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-10">Popular Treatments</h3>
+            <h3 class="text-4xl font-bold font-poppins text-center mb-10">Popular Treatments</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Treatment Card -->
@@ -167,8 +167,8 @@
                         <img src="https://images.pexels.com/photos/8460089/pexels-photo-8460089.jpeg" alt="Cardiology"
                             class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105">
                     </div>
-                    <h4 class="text-2xl font-bold text-blue-600 mb-2">Cardiology</h4>
-                    <p>Advanced heart procedures including bypass surgery, angioplasty, and more from leading
+                    <h4 class="text-2xl font-bold  font-poppins text-blue-600 mb-2">Cardiology</h4>
+                    <p class="font-lora">Advanced heart procedures including bypass surgery, angioplasty, and more from leading
                         cardiologists.</p>
                 </div>
 
@@ -179,8 +179,8 @@
                             alt="Orthopedics"
                             class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105">
                     </div>
-                    <h4 class="text-2xl font-bold text-blue-600 mb-2">Orthopedic Surgery</h4>
-                    <p>Joint replacement, spine surgery, and sports injury treatments at world-class orthopedic centers.
+                    <h4 class="text-2xl font-bold text-blue-600 font-poppins  mb-2">Orthopedic Surgery</h4>
+                    <p class="font-lora">Joint replacement, spine surgery, and sports injury treatments at world-class orthopedic centers.
                     </p>
                 </div>
 
@@ -190,8 +190,8 @@
                             alt="Cosmetic Surgery"
                             class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105">
                     </div>
-                    <h4 class="text-2xl font-bold text-blue-600 mb-2">Cosmetic Surgery</h4>
-                    <p>Enhance appearance with safe and effective cosmetic procedures from certified specialists.</p>
+                    <h4 class="text-2xl font-bold text-blue-600 font-poppins mb-2">Cosmetic Surgery</h4>
+                    <p class="font-lora">Enhance appearance with safe and effective cosmetic procedures from certified specialists.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
@@ -200,8 +200,8 @@
                             alt="Fertility Treatment"
                             class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105">
                     </div>
-                    <h4 class="text-2xl font-bold text-blue-600 mb-2">Fertility Treatments</h4>
-                    <p>Personalized fertility care including IVF, IUI, and egg donation with high success rates.</p>
+                    <h4 class="text-2xl font-bold text-blue-600 font-poppins mb-2">Fertility Treatments</h4>
+                    <p class="font-lora"> Personalized fertility care including IVF, IUI, and egg donation with high success rates.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
@@ -210,8 +210,8 @@
                             alt="Cancer Treatment"
                             class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105">
                     </div>
-                    <h4 class="text-2xl font-bold text-blue-600 mb-2">Cancer Treatment</h4>
-                    <p>State-of-the-art oncology centers offering chemotherapy, radiation, and surgical oncology.</p>
+                    <h4 class="text-2xl font-bold text-blue-600 font-poppins mb-2">Cancer Treatment</h4>
+                    <p class="font-lora">State-of-the-art oncology centers offering chemotherapy, radiation, and surgical oncology.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
@@ -220,8 +220,8 @@
                             alt="Organ Transplant"
                             class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105">
                     </div>
-                    <h4 class="text-2xl font-bold text-blue-600 mb-2">Organ Transplants</h4>
-                    <p>Highly specialized transplant programs for kidney, liver, and other vital organs.</p>
+                    <h4 class="text-2xl font-bold text-blue-600 font-poppins mb-2">Organ Transplants</h4>
+                    <p class="font-lora">Highly specialized transplant programs for kidney, liver, and other vital organs.</p>
                 </div>
 
             </div>
@@ -232,40 +232,40 @@
     <!-- Services Section -->
     <section id="services" class="py-16 bg-blue-400">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-bold text-white text-center mb-10" data-aos="fade-down">Our Services</h3>
+            <h3 class="text-4xl font-bold text-white font-poppins text-center mb-10" data-aos="fade-down">Our Services</h3>
 
             <div class="grid md:grid-cols-3 gap-8">
 
                 <!-- Card 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition"
                     data-aos="fade-right">
                     <img src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg"
                         alt="Medical Consultation" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h4 class="text-2xl font-bold mb-2 text-blue-600">Medical Consultation</h4>
-                        <p class="text-gray-700">Get pre-evaluation and expert opinions from top doctors around the
+                        <h4 class="text-2xl font-bold mb-2 font-poppins text-blue-600">Medical Consultation</h4>
+                        <p class="text-gray-700 font-lora">Get pre-evaluation and expert opinions from top doctors around the
                             globe.</p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition" data-aos="zoom-in">
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition" data-aos="zoom-in">
                     <img src="https://images.pexels.com/photos/8830672/pexels-photo-8830672.jpeg"
                         alt="Travel and Visa Assistance" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h4 class="text-2xl font-bold mb-2 text-blue-600">Travel & Visa Assistance</h4>
-                        <p class="text-gray-700">We help you secure travel documents, plan your trip, and ensure a
+                        <h4 class="text-2xl font-bold mb-2 font-poppins text-blue-600">Travel & Visa Assistance</h4>
+                        <p class="text-gray-700 font-lora">We help you secure travel documents, plan your trip, and ensure a
                             smooth experience.</p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition" data-aos="fade-left">
+                <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition" data-aos="fade-left">
                     <img src="https://images.pexels.com/photos/7659565/pexels-photo-7659565.jpeg"
                         alt="Post-Treatment Care" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h4 class="text-2xl font-bold mb-2 text-blue-600">Post-Treatment Care</h4>
-                        <p class="text-gray-700">Enjoy extended recovery with comfortable stays and easy access to
+                        <h4 class="text-2xl font-bold mb-2 font-poppins text-blue-600">Post-Treatment Care</h4>
+                        <p class="text-gray-700 font-lora">Enjoy extended recovery with comfortable stays and easy access to
                             follow-up services.</p>
                     </div>
                 </div>
@@ -277,7 +277,7 @@
     <!-- Cost Comparison Section -->
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h3 class="text-3xl font-semibold text-center text-blue-700 mb-12">Cost Comparison by Procedure</h3>
+            <h3 class="text-3xl font-semibold font-poppins text-center text-blue-700 mb-12">Cost Comparison by Procedure</h3>
 
             <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                 <!-- Table Header -->
@@ -325,7 +325,7 @@
     <!-- Partner Hospitals Section -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto text-center">
-            <h3 class="text-4xl font-bold mb-10" data-aos="fade-up">Our Partner Hospitals</h3>
+            <h3 class="text-4xl font-bold mb-10 font-poppins" data-aos="fade-up">Our Partner Hospitals</h3>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -370,7 +370,7 @@
     <!-- Testimonials Carousel Section -->
     <section class="py-16 bg-blue-900">
         <div class="container mx-auto text-center">
-            <h3 class="text-4xl text-white font-bold mb-8">What Our Patients Say</h3>
+            <h3 class="text-4xl text-white font-poppins font-bold mb-8">What Our Patients Say</h3>
 
             <!-- Swiper Container -->
             <div class="swiper testimonialSwiper px-4">
@@ -494,7 +494,7 @@
 
         <div class="relative container mx-auto px-4">
             <div class="max-w-2xl mx-auto bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
-                <h3 class="text-3xl font-semibold mb-6 text-center text-blue-800">Contact Us</h3>
+                <h3 class="text-3xl font-semibold mb-6 font-poppins text-center text-blue-800">Contact Us</h3>
                 <form id="contactForm" class="space-y-4">
 
                     <div>
@@ -517,7 +517,7 @@
 
                     <div class="text-center">
                         <button type="submit"
-                            class="bg-orange-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 w-full md:w-auto">Submit</button>
+                            class="bg-blue-800  text-white px-6 py-3 rounded-lg hover:bg-orange-700 w-full md:w-auto">Submit</button>
                     </div>
                     <p id="successMessage" class="text-green-600 font-medium mt-4 hidden">Thank you! Your message has
                         been sent.</p>
