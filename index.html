@@ -52,22 +52,17 @@
 
   <body class="bg-gray-50 text-gray-800">
     <!-- Navbar -->
-    <header
-      id="navbar"
-      class="fixed w-full z-50 transition-all duration-300 "
-    >
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
       <div
         style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-        class=" text-sm text-teal-700 flex justify-between items-center px-4 py-2"
+        class="text-sm text-teal-700 flex justify-between items-center px-4 py-2"
       >
         <span class="text-white hover:text-blue-500">info@meditour.com</span>
         <div class="space-x-4 hidden sm:flex mx-8">
           <a href="#" class="hover:text-blue-700 text-white"
             >Get Free Second Opinion</a
           >
-          <a href="#" class="hover:text-blue-700 text-white"
-            >Patient Support</a
-          >
+          <a href="#" class="hover:text-blue-700 text-white">Patient Support</a>
           <a href="#" class="hover:text-blue-700 text-white">Need Help?</a>
         </div>
       </div>
@@ -98,12 +93,65 @@
           id="navLinks"
           class="hidden flex-col lg:flex lg:flex-row absolute lg:static top-16 left-0 w-full lg:w-auto bg-black lg:bg-transparent text-white font-poppins space-y-4 lg:space-y-0 lg:space-x-6 px-4 py-4 lg:p-0"
         >
-          <a href="#home" class="hover:text-blue-800">Home</a>
-          <a href="#about" class="hover:text-blue-800">About Us</a>
-          <a href="#services" class="hover:text-blue-800">Services</a>
-          <a href="#faq" class="hover:text-blue-800">FAQ</a>
-          <a href="#testimonials" class="hover:text-blue-800">Testimonials</a>
-          <a href="#contact" class="hover:text-blue-800">Contact</a>
+          <a
+            href="#home"
+            class="nav-link transition-colors hover:text-[#00cf81]"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="nav-link transition-colors hover:text-[#00cf81]"
+            >About Us</a
+          >
+          <div class="relative group">
+            <a
+              href="#services"
+              class="nav-link transition-colors duration-300 hover:text-[#00cf81]"
+              >Services</a
+            >
+            <div
+              class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white text-black shadow-lg min-w-[200px] z-50"
+            >
+              <a
+                href="#treatment"
+                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
+              >
+                Treatment Options
+              </a>
+              <a
+                href="#surgery"
+                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
+              >
+                Surgery Support
+              </a>
+              <a
+                href="#consultation"
+                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
+              >
+                Online Consultation
+              </a>
+              <a
+                href="#rehab"
+                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
+              >
+                Rehabilitation
+              </a>
+            </div>
+          </div>
+
+          <a href="#faq" class="nav-link transition-colors hover:text-[#00cf81]"
+            >FAQ</a
+          >
+          <a
+            href="#testimonials"
+            class="nav-link transition-colors hover:text-[#00cf81]"
+            >Testimonials</a
+          >
+          <a
+            href="#contact"
+            class="nav-link transition-colors hover:text-[#00cf81]"
+            >Contact</a
+          >
         </nav>
       </div>
     </header>
@@ -445,14 +493,11 @@
     </section>
 
     <!-- Services Section -->
-    <section
-      class="py-12 px-6 text-white lg:px-24"
-      style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-    >
+    <section class="py-12 px-6 text-white lg:px-24" style="background: #00cf81">
       <h2 class="text-3xl font-bold text-gray-300 mb-2">
-        <span class="text-white">MediTour</span> Features
+        <span class="text-white">MediTour Features</span>
       </h2>
-      <p class="text-black mb-10">
+      <p class="text-white mb-10">
         Easing out the patient treatment, enabling it with technology driven
         solutions, patient care systems & transparency at each step of the
         medical treatment in India.
@@ -460,50 +505,46 @@
 
       <div class="grid lg:grid-cols-3 gap-8 items-center">
         <!-- Left Column -->
-        <div class="space-y-8">
-          <div>
-            <h3 class="font-semibold text-lg mb-2">
-              Medical Counsellor Support
-            </h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>24x7* Availability
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Call & Chat Support
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>14+ Languages Support
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Treatment
-                Recommendations
-              </li>
-            </ul>
-          </div>
+     <div class="space-y-8">
+  <div>
+    <h3 class="font-semibold text-lg mb-2">
+      Medical Counsellor Support
+    </h3>
+    <ul class="space-y-2 text-sm">
+      <li class="flex items-center">
+        <div class="text-rose-600 mr-2">✔</div> 24x7* Availability
+      </li>
+      <li class="flex items-center">
+        <div class="text-rose-600 mr-2">✔</div> Call & Chat Support
+      </li>
+      <li class="flex items-center">
+        <div class="text-rose-600 mr-2">✔</div> 14+ Languages Support
+      </li>
+      <li class="flex items-center">
+        <div class="text-rose-600 mr-2">✔</div> Treatment Recommendations
+      </li>
+    </ul>
+  </div>
 
-          <div>
-            <h3 class="font-semibold text-lg mb-2">Patient Care</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Dedicated Staff at
-                Hospital
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Travel & accommodation
-                assistance
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Pickup and Drop
-                Facilities
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Easy Documentation
-                Process
-              </li>
-            </ul>
-          </div>
-        </div>
+  <div>
+    <h3 class="font-semibold text-lg mb-2">Patient Care</h3>
+    <ul class="space-y-2 text-sm">
+      <li class="flex items-center">
+        <span class="text-rose-600 mr-2">✔</span> Dedicated Staff at Hospital
+      </li>
+      <li class="flex items-center">
+        <span class="text-rose-600 mr-2">✔</span> Travel & accommodation assistance
+      </li>
+      <li class="flex items-center">
+        <span class="text-rose-600 mr-2">✔</span> Pickup and Drop Facilities
+      </li>
+      <li class="flex items-center">
+        <span class="text-rose-600 mr-2">✔</span> Easy Documentation Process
+      </li>
+    </ul>
+  </div>
+</div>
+
 
         <!-- Center Image -->
         <div class="flex justify-center">
@@ -1322,16 +1363,13 @@
     </script>
 
     <!-- Footer -->
-    <footer
-      class="text-white pt-12 pb-6"
-      style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-    >
+    <footer class="text-white pt-12 pb-6" style="background: #00cf81">
       <div
         class="container mx-auto px-4 grid md:grid-cols-4 sm:grid-cols-2 gap-8 text-left"
       >
         <!-- Company Info -->
         <div>
-          <img src="./images/logo-white.jpeg" alt="" srcset="" />
+          <img src="./images/logotwo.png" alt="" srcset="" />
           <p class="text-sm text-black">
             Your trusted partner in medical tourism. We connect you with
             world-class hospitals and ensure a hassle-free treatment journey.
@@ -1401,6 +1439,152 @@
       </div>
     </footer>
 
+    <!-- Consultant form  -->
+    <dialog id="dialog" class="backdrop:bg-black/50 rounded-lg p-0 border-none">
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
+        <!-- Close Button -->
+        <button
+          class="absolute top-3 right-1 text-gray-500 hover:text-red-500 text-2xl font-bold"
+          id="closeModal"
+        >
+          ×
+        </button>
+
+        <!-- Header -->
+        <h2 class="text-center text-xl font-semibold text-teal-600 mb-4">
+          Book Your <span class="text-green-600 font-bold">FREE</span>
+          Consultation Now 🏥
+        </h2>
+
+        <!-- Form -->
+        <form id="consultationForm" class="space-y-4">
+          <!-- Patient Name -->
+          <div>
+            <label class="block text-gray-700 font-medium mb-1"
+              >Patient Name <span class="text-red-600">*</span></label
+            >
+            <input
+              type="text"
+              placeholder="Patient Name*"
+              required
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+            />
+          </div>
+
+          <!-- Mobile Number -->
+          <div>
+            <label class="block text-gray-700 font-medium mb-1"
+              >Mobile Number <span class="text-red-600">*</span></label
+            >
+            <div class="flex items-center space-x-2">
+              <select
+                class="border border-gray-300 rounded px-2 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              >
+                <option value="+91">🇮🇳 +91</option>
+              </select>
+              <input
+                type="tel"
+                placeholder="081234 56789"
+                required
+                class="flex-1 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+          </div>
+
+          <!-- Medical Problem -->
+          <div>
+            <label class="block text-gray-700 font-medium mb-1"
+              >Describe Your Medical Problem</label
+            >
+            <textarea
+              placeholder="Describe Your Medical Problem"
+              rows="4"
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-[#00c6ff] to-[#00cf81] text-white font-bold py-2 rounded hover:opacity-90 transition"
+          >
+            SUBMIT
+          </button>
+        </form>
+
+        <!-- Footer Stats -->
+        <div
+          class="mt-6 flex justify-around text-center text-sm text-gray-700 font-semibold"
+        >
+          <div>
+            <span class="text-teal-600 text-xl block">100,000+</span>
+            Patients Assisted
+          </div>
+          <div>
+            <span class="text-teal-600 text-xl block">125+</span>
+            Countries
+          </div>
+          <div>
+            <span class="text-teal-600 text-xl block">11+</span>
+            Language Support
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- It is Js -->
+    <script>
+      const dialog = document.getElementById("dialog");
+      const closeBtn = document.getElementById("closeModal");
+
+      let modalOpened = false; // Ensure it opens only once
+
+      // Close button (×)
+      closeBtn.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      // Close when clicking outside the modal content
+      dialog.addEventListener("click", function (event) {
+        const rect = this.getBoundingClientRect();
+        const isInDialog =
+          rect.top <= event.clientY &&
+          event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX &&
+          event.clientX <= rect.left + rect.width;
+
+        if (!isInDialog) {
+          dialog.close();
+        }
+      });
+
+      // Handle form submission
+      document
+        .getElementById("consultationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Form submitted successfully!");
+          dialog.close();
+        });
+
+      // Auto open modal when 25% scroll reached
+      window.addEventListener("scroll", function () {
+        if (modalOpened) return;
+
+        const scrollTop = window.scrollY;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrolledPercentage = (scrollTop / docHeight) * 100;
+
+        if (scrolledPercentage >= 25) {
+          dialog.showModal();
+          modalOpened = true;
+        }
+      });
+    </script>
+
+    <!-- Ends Here -->
+
     <!-- SwiperJS Init -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -1454,7 +1638,7 @@
       });
       window.addEventListener("scroll", function () {
         const navbar = document.getElementById("navbar");
-        const navLinks = document.querySelectorAll("#navLinks a");
+        const navLinks = document.querySelectorAll("#navLinks a.nav-link"); // Includes Services
 
         if (window.scrollY > 50) {
           navbar.classList.remove("bg-transparent", "bg-opacity-20");
@@ -1462,14 +1646,14 @@
 
           navLinks.forEach((link) => {
             link.classList.remove("text-white");
-            link.classList.add("text-black");
+            link.classList.add("text-black", "hover:text-[#00cf81]");
           });
         } else {
           navbar.classList.remove("bg-white", "shadow-md");
           navbar.classList.add("bg-transparent", "bg-opacity-20");
 
           navLinks.forEach((link) => {
-            link.classList.remove("text-black");
+            link.classList.remove("text-black", "hover:text-[#00cf81]");
             link.classList.add("text-white");
           });
         }
