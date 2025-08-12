@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Realtime DB Example</title>
+</head>
+<body>
+    <h2>Users List</h2>
+    <ul id="usersList"></ul>
+
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        // Your Firebase config (from console)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "SENDER_ID",
+            appId: "APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Get reference to "users" node
+        const usersRef = ref(db, "users");
+
+        // Listen for changes in "users"
+        onValue(usersRef, (snapshot) => {
+            const data = snapshot.val();
+            const list = document.getElementById("usersList");
+            list.innerHTML = ""; // Clear existing list
+
+            if (data) {
+                Object.keys(data).forEach(key => {
+                    const li = document.createElement("li");
+                    li.textContent = `${data[key].name} - ${data[key].email}`;
+                    list.appendChild(li);
+                });
+            } else {
+                list.innerHTML = "<li>No users found</li>";
+            }
+        });
+    </script>
+</body>
+</html>
