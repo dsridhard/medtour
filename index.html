@@ -1,1804 +1,1438 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cure&Explore - Medical Tourism</title>
 
-    <link rel="icon" type="image/png" href="./images/favicon.png" />
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cure&Explore - Medical Tourism</title>
 
-      // Your web app's Firebase configuration
-    </script>
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awsome  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <!-- AOS CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    // Your web app's Firebase configuration
+  
 
-    <!-- Optional: Tailwind Arbitrary Classes Polyfill (if needed) -->
 
-    <style>
-      .swiper-button-next,
-      .swiper-button-prev {
-        display: none !important;
-      }
+  </script>
 
-      .font-poppins {
-        font-family: "Poppins", sans-serif;
-      }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awsome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet" />
 
-      .font-lora {
-        font-family: "Lora", serif;
-      }
-    </style>
-  </head>
+  <!-- Optional: Tailwind Arbitrary Classes Polyfill (if needed) -->
 
-  <body class="bg-gray-50 text-gray-800">
-    <!-- Navbar -->
-    <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
-      <div
-        style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-        class="text-sm text-teal-700 flex justify-between items-center px-4 py-2"
-      >
-        <span class="text-white hover:text-blue-500">info@meditour.com</span>
-        <div class="space-x-4 hidden sm:flex mx-8">
-          <a href="#" class="hover:text-blue-700 text-white"
-            >Get Free Second Opinion</a
-          >
-          <a href="#" class="hover:text-blue-700 text-white">Patient Support</a>
-          <a href="#" class="hover:text-blue-700 text-white">Need Help?</a>
-        </div>
+  <style>
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none !important;
+    }
+
+    .font-poppins {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .font-lora {
+      font-family: "Lora", serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <div style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+      class="text-sm text-teal-700 flex justify-between items-center px-4 py-2">
+      <span class="text-white hover:text-blue-500">info@meditour.com</span>
+      <div class="space-x-4 hidden sm:flex mx-8">
+        <a href="#" class="hover:text-blue-700 text-white">Get Free Second Opinion</a>
+        <a href="#" class="hover:text-blue-700 text-white">Patient Support</a>
+        <a href="#" class="hover:text-blue-700 text-white">Need Help?</a>
       </div>
-      <div class="container mx-auto flex justify-between items-center p-4">
-        <!-- Logo -->
-        <!-- <h1 class="text-2xl font-bold text-white font-poppins" id="logo">
+    </div>
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Logo -->
+      <!-- <h1 class="text-2xl font-bold text-white font-poppins" id="logo">
           Cure & Explore
         </h1> -->
-        <img src="./images/logo.png" alt="Logo" height="180px" width="290px" />
+      <img src="./images/logo.png" alt="Logo" height="180px" width="290px" />
 
-        <!-- Hamburger Button for Mobile -->
-        <button id="menuToggle" class="lg:hidden text-white focus:outline-none">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+      <!-- Hamburger Button for Mobile -->
+      <button id="menuToggle" class="lg:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
 
-        <!-- Navigation Menu -->
-        <nav
-          id="navLinks"
-          class="hidden flex-col lg:flex lg:flex-row absolute lg:static top-16 left-0 w-full lg:w-auto bg-black lg:bg-transparent text-white font-poppins space-y-4 lg:space-y-0 lg:space-x-6 px-4 py-4 lg:p-0"
-        >
-          <a
-            href="#home"
-            class="nav-link transition-colors hover:text-[#00cf81]"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="nav-link transition-colors hover:text-[#00cf81]"
-            >About Us</a
-          >
-          <div class="relative group">
-            <a
-              href="#services"
-              class="nav-link transition-colors duration-300 hover:text-[#00cf81]"
-              >Services</a
-            >
-            <div
-              class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white text-black shadow-lg min-w-[200px] z-50"
-            >
-              <a
-                href="#treatment"
-                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
-              >
-                Treatment Options
-              </a>
-              <a
-                href="#surgery"
-                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
-              >
-                Surgery Support
-              </a>
-              <a
-                href="#consultation"
-                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
-              >
-                Online Consultation
-              </a>
-              <a
-                href="#rehab"
-                class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition"
-              >
-                Rehabilitation
-              </a>
-            </div>
-          </div>
-
-          <a href="#faq" class="nav-link transition-colors hover:text-[#00cf81]"
-            >FAQ</a
-          >
-          <a
-            href="#testimonials"
-            class="nav-link transition-colors hover:text-[#00cf81]"
-            >Testimonials</a
-          >
-          <a
-            href="#contact"
-            class="nav-link transition-colors hover:text-[#00cf81]"
-            >Contact</a
-          >
-        </nav>
-      </div>
-    </header>
-    <!-- Carousel with Search Bar -->
-    <section class="relative w-full h-[100vh]">
-      <!-- Swiper Carousel -->
-      <div class="swiper mySwiper w-full h-full z-0">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide relative">
-            <img
-              src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg"
-              alt="Hospital 1"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="swiper-slide relative">
-            <img
-              src="https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg"
-              alt="Hospital 2"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="swiper-slide relative">
-            <img
-              src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg"
-              alt="Doctor and Patient"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-          </div>
-
-          <!-- Slide 4 -->
-          <div class="swiper-slide relative">
-            <img
-              src="https://images.pexels.com/photos/7578803/pexels-photo-7578803.jpeg"
-              alt="Doctor and Patient"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <!-- Navigation Menu -->
+      <nav id="navLinks"
+        class="hidden flex-col lg:flex lg:flex-row absolute lg:static top-16 left-0 w-full lg:w-auto bg-black lg:bg-transparent text-white font-poppins space-y-4 lg:space-y-0 lg:space-x-6 px-4 py-4 lg:p-0">
+        <a href="#home" class="nav-link transition-colors hover:text-[#00cf81]">Home</a>
+        <a href="#about" class="nav-link transition-colors hover:text-[#00cf81]">About Us</a>
+        <div class="relative group">
+          <a href="#services" class="nav-link transition-colors duration-300 hover:text-[#00cf81]">Services</a>
+          <div
+            class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white text-black shadow-lg min-w-[200px] z-50">
+            <a href="#treatment"
+              class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition">
+              Treatment Options
+            </a>
+            <a href="#surgery"
+              class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition">
+              Surgery Support
+            </a>
+            <a href="#consultation"
+              class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition">
+              Online Consultation
+            </a>
+            <a href="#rehab"
+              class="px-4 py-2 hover:text-white hover:bg-gradient-to-r hover:from-[#00c6ff] hover:to-[#00cf81] transition">
+              Rehabilitation
+            </a>
           </div>
         </div>
 
-        <!-- Navigation & Pagination -->
-        <div class="swiper-button-next text-white"></div>
-        <div class="swiper-button-prev text-white"></div>
-        <div class="swiper-pagination text-white"></div>
-      </div>
+        <a href="#faq" class="nav-link transition-colors hover:text-[#00cf81]">FAQ</a>
+        <a href="#testimonials" class="nav-link transition-colors hover:text-[#00cf81]">Testimonials</a>
+        <a href="#contact" class="nav-link transition-colors hover:text-[#00cf81]">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Carousel with Search Bar -->
+  <section class="relative w-full h-[100vh]">
+    <!-- Swiper Carousel -->
+    <div class="swiper mySwiper w-full h-full z-0">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide relative">
+          <img src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg"
+            alt="Hospital 1" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
 
-      <!-- 🔥 Search Form Overlay -->
-      <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-6xl px-4"
-      >
-        <div class="bg-white bg-opacity-95 p-6 rounded-xl shadow-lg">
-          <h2
-            class="text-xl md:text-2xl font-semibold text-center text-gray-800 mb-6"
-          >
-            Get a Personalized Quote from Our Medical Experts
-          </h2>
-          <form
-            class="flex flex-col md:flex-row gap-3 justify-center items-center"
-          >
-            <!-- Patient Name -->
-            <input
-              type="text"
-              placeholder="Patient Name*"
-              class="p-3 rounded-md bg-gray-100 border border-gray-300 w-full md:w-64 focus:outline-none"
-            />
+        <!-- Slide 2 -->
+        <div class="swiper-slide relative">
+          <img src="https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg" alt="Hospital 2"
+            class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
 
-            <!-- Country Code + Phone Number Group -->
-            <div class="flex w-full md:w-64">
-              <select
-                class="bg-gray-100 border border-gray-300 px-2 pr-6 rounded-l-md focus:outline-none"
-              >
-                <option value="+91" selected>&#x1F1EE;&#x1F1F3; +91</option>
-              </select>
-              <input
-                type="tel"
-                placeholder="081234 56789"
-                class="flex-grow p-3 bg-gray-100 border-t border-b border-r border-gray-300 rounded-r-md focus:outline-none"
-              />
-            </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide relative">
+          <img src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg" alt="Doctor and Patient"
+            class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
 
-            <!-- Medical Problem -->
-            <input
-              type="text"
-              placeholder="Describe Your Medical Problem"
-              class="p-3 rounded-md bg-gray-100 border border-gray-300 w-full md:w-64 focus:outline-none"
-            />
-
-            <!-- Submit Button -->
-            <button
-              type="submit"
-              class="bg-[#00c6ff] text-white px-6 py-3 rounded-lg hover:bg-[#00cf81] w-full md:w-auto"
-            >
-              Submit
-            </button>
-          </form>
+        <!-- Slide 4 -->
+        <div class="swiper-slide relative">
+          <img src="https://images.pexels.com/photos/7578803/pexels-photo-7578803.jpeg" alt="Doctor and Patient"
+            class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
       </div>
-    </section>
 
-    <!-- About Section -->
-    <!-- About Section -->
-    <section
-      id="about"
-      class="py-16"
-      style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-    >
-      <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-          <!-- Image Grid (Left Side) -->
-          <div class="grid grid-cols-2 gap-4">
-            <img
-              src="https://images.pexels.com/photos/8413162/pexels-photo-8413162.jpeg?_gl=1*ac54qv*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQyMTQkajU4JGwwJGgw"
-            />
-            <img
-              src="https://images.pexels.com/photos/4769120/pexels-photo-4769120.jpeg?_gl=1*1va6t2i*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQyNTkkajEzJGwwJGgw"
-              alt="Operation Theater"
-              class="w-full h-auto object-cover rounded-md shadow-md"
-            />
-            <img
-              src="https://images.pexels.com/photos/6129582/pexels-photo-6129582.jpeg?_gl=1*fontoe*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQyOTkkajQ0JGwwJGgw"
-              alt="Wheelchair services"
-              class="w-full h-auto object-cover rounded-md shadow-md"
-            />
-            <img
-              src="https://images.pexels.com/photos/7089018/pexels-photo-7089018.jpeg?_gl=1*1r162i7*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQzMjkkajE0JGwwJGgw"
-              alt="Medical Scan"
-              class="w-full h-auto object-cover rounded-md shadow-md"
-            />
-          </div>
+      <!-- Navigation & Pagination -->
+      <div class="swiper-button-next text-white"></div>
+      <div class="swiper-button-prev text-white"></div>
+      <div class="swiper-pagination text-white"></div>
+    </div>
 
-          <!-- Content Section (Right Side) -->
-          <div>
-            <p
-              class="text-4xl font-[1000] uppercase font-poppins tracking-widest text-white mb-2"
-            >
-              About
-            </p>
-            <h2 class="text-4xl font-medium text-white mb-6">
-              How Can We Help You?
-            </h2>
-            <p class="text-lg text-white mb-4">
-              <span class="font-semibold font-lora text-white">MedTour</span>
-              is an international medical tourism service that helps clients
-              connect with top hospitals and arrange personalized treatments
-              globally.
-            </p>
-            <p class="text-white font-loramb-4">
-              We partner with the best clinics worldwide to ensure you receive
-              the most favorable treatment options with full transparency and
-              care.
-            </p>
-            <p class="text-white font-lora mb-4">
-              Our dedicated experts assist you during difficult times by
-              identifying the right clinic, handling paperwork, and staying
-              connected throughout your recovery.
-            </p>
-
-            <ul class="list-disc list-inside text-left space-y-2 text-white">
-              <li>
-                <span class="text-white font-semibold">Plastic Surgery</span>
-              </li>
-              <li><span class="text-white font-semibold">Oncology</span></li>
-              <li>
-                <span class="text-white font-semibold"
-                  >Obstetrics and Gynecology</span
-                >
-              </li>
-              <li>
-                <span class="text-white font-semibold"
-                  >Reproductive Health and more</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Popular Treatments Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto">
-        <h3
-          style="
-            background: linear-gradient(to right, #00c6ff, #00cf81);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          "
-          class="text-4xl font-bold font-poppins text-center mb-10"
-        >
-          Popular Treatments
-        </h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Treatment Card -->
-          <div
-            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group"
-          >
-            <div class="rounded-md overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/8460089/pexels-photo-8460089.jpeg"
-                alt="Cardiology"
-                class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105"
-              />
-            </div>
-            <h4
-              style="color: #00c6ff"
-              class="text-2xl font-bold font-poppins mb-2"
-            >
-              Cardiology
-            </h4>
-            <p class="font-lora">
-              Advanced heart procedures including bypass surgery, angioplasty,
-              and more from leading cardiologists.
-            </p>
-          </div>
-
-          <!-- Repeat this pattern for each card -->
-          <div
-            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group"
-          >
-            <div class="rounded-md overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/30798553/pexels-photo-30798553.jpeg"
-                alt="Orthopedics"
-                class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105"
-              />
-            </div>
-            <h4
-              style="color: #00c6ff"
-              class="text-2xl font-bold font-poppins mb-2"
-            >
-              Orthopedic Surgery
-            </h4>
-            <p class="font-lora">
-              Joint replacement, spine surgery, and sports injury treatments at
-              world-class orthopedic centers.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group"
-          >
-            <div class="rounded-md overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/7108227/pexels-photo-7108227.jpeg"
-                alt="Cosmetic Surgery"
-                class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105"
-              />
-            </div>
-            <h4
-              style="color: #00c6ff"
-              class="text-2xl font-bold text-blue-600 font-poppins mb-2"
-            >
-              Cosmetic Surgery
-            </h4>
-            <p class="font-lora">
-              Enhance appearance with safe and effective cosmetic procedures
-              from certified specialists.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group"
-          >
-            <div class="rounded-md overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/6149009/pexels-photo-6149009.jpeg"
-                alt="Fertility Treatment"
-                class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105"
-              />
-            </div>
-            <h4
-              style="color: #00c6ff"
-              class="text-2xl font-bold text-blue-600 font-poppins mb-2"
-            >
-              Fertility Treatments
-            </h4>
-            <p class="font-lora">
-              Personalized fertility care including IVF, IUI, and egg donation
-              with high success rates.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group"
-          >
-            <div class="rounded-md overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/6011602/pexels-photo-6011602.jpeg"
-                alt="Cancer Treatment"
-                class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105"
-              />
-            </div>
-            <h4
-              style="color: #00c6ff"
-              class="text-2xl font-bold text-blue-600 font-poppins mb-2"
-            >
-              Cancer Treatment
-            </h4>
-            <p class="font-lora">
-              State-of-the-art oncology centers offering chemotherapy,
-              radiation, and surgical oncology.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group"
-          >
-            <div class="rounded-md overflow-hidden mb-4">
-              <img
-                src="https://images.pexels.com/photos/7269618/pexels-photo-7269618.jpeg"
-                alt="Organ Transplant"
-                class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105"
-              />
-            </div>
-            <h4
-              style="color: #00c6ff"
-              class="text-2xl font-bold font-poppins mb-2"
-            >
-              Organ Transplants
-            </h4>
-            <p class="font-lora">
-              Highly specialized transplant programs for kidney, liver, and
-              other vital organs.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-12 px-6 text-white lg:px-24" style="background: #00cf81">
-      <h2 class="text-3xl font-bold text-gray-300 mb-2">
-        <span class="text-white">MediTour Features</span>
-      </h2>
-      <p class="text-white mb-10">
-        Easing out the patient treatment, enabling it with technology driven
-        solutions, patient care systems & transparency at each step of the
-        medical treatment in India.
-      </p>
-
-      <div class="grid lg:grid-cols-3 gap-8 items-center">
-        <!-- Left Column -->
-        <div class="space-y-8">
-          <div>
-            <h3 class="font-semibold text-lg mb-2">
-              Medical Counsellor Support
-            </h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center">
-                <div class="text-rose-900 mr-2">✔</div>
-                24x7* Availability
-              </li>
-              <li class="flex items-center">
-                <div class="text-rose-600 mr-2">✔</div>
-                Call & Chat Support
-              </li>
-              <li class="flex items-center">
-                <div class="text-rose-600 mr-2">✔</div>
-                14+ Languages Support
-              </li>
-              <li class="flex items-center">
-                <div class="text-rose-600 mr-2">✔</div>
-                Treatment Recommendations
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-semibold text-lg mb-2">Patient Care</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center">
-                <span class="text-rose-600 mr-2">✔</span> Dedicated Staff at
-                Hospital
-              </li>
-              <li class="flex items-center">
-                <span class="text-rose-600 mr-2">✔</span> Travel & accommodation
-                assistance
-              </li>
-              <li class="flex items-center">
-                <span class="text-rose-600 mr-2">✔</span> Pickup and Drop
-                Facilities
-              </li>
-              <li class="flex items-center">
-                <span class="text-rose-600 mr-2">✔</span> Easy Documentation
-                Process
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Center Image -->
-        <div class="flex justify-center">
-          <img
-            src="/images/doctor-app-preview.png"
-            alt="Mobile App Preview"
-            class="max-h-96 w-auto"
-          />
-        </div>
-
-        <!-- Right Column -->
-        <div class="space-y-8">
-          <div>
-            <h3 class="font-semibold text-lg mb-2">Treatment Packages</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Treatment in your
-                budget
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Best Doctors and
-                Surgeons
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>NABH & JCI accredited
-                Hospitals
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Multiple Consultation
-                Options
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-semibold text-lg mb-2">Technology Solutions</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>On Demand Video
-                Consultation
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Secured health record
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Track & Plan Your
-                Treatment
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✔</span>Book Lab Tests & Order
-                Medicines Online
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cost Comparison Section -->
-    <section class="py-20 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <h3
-          style="
-            background: linear-gradient(to right, #00c6ff, #00cf81);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          "
-          class="text-3xl font-semibold font-poppins text-center mb-12"
-        >
-          Cost Comparison by Procedure
-        </h3>
-
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <!-- Table Header -->
-          <div
-            style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-            class="grid grid-cols-4 text-white text-lg font-medium text-center"
-          >
-            <div class="p-4">Procedure</div>
-            <div class="p-4">USA</div>
-            <div class="p-4">UK</div>
-            <div class="p-4">India</div>
-          </div>
-
-          <!-- Row 1 -->
-          <div
-            class="grid grid-cols-4 border-t text-center text-gray-800 hover:bg-blue-50 transition"
-          >
-            <div class="p-4 font-semibold">Knee Replacement</div>
-            <div class="p-4">$40,000</div>
-            <div class="p-4">£25,000</div>
-            <div class="p-4 text-green-600 font-bold">$5,000</div>
-          </div>
-
-          <!-- Row 2 -->
-          <div
-            class="grid grid-cols-4 border-t text-center text-gray-800 hover:bg-blue-50 transition"
-          >
-            <div class="p-4 font-semibold">Heart Bypass</div>
-            <div class="p-4">$70,000</div>
-            <div class="p-4">£35,000</div>
-            <div class="p-4 text-green-600 font-bold">$7,500</div>
-          </div>
-
-          <!-- Row 3 -->
-          <div
-            class="grid grid-cols-4 border-t text-center text-gray-800 hover:bg-blue-50 transition"
-          >
-            <div class="p-4 font-semibold">Cosmetic Surgery</div>
-            <div class="p-4">$15,000</div>
-            <div class="p-4">£10,000</div>
-            <div class="p-4 text-green-600 font-bold">$2,000</div>
-          </div>
-        </div>
-
-        <!-- Optional Callout -->
-        <p class="mt-8 text-center text-gray-600 text-md">
-          <strong class="text-green-700">Save up to 85%</strong> by choosing
-          India for quality medical procedures.
-        </p>
-      </div>
-    </section>
-
-    <!-- Partner Hospitals Section -->
-    <section class="py-12 px-4 md:px-16">
-      <div class="flex justify-between items-center mb-6">
-        <h2
-          style="
-            background: linear-gradient(to right, #00c6ff, #00cf81);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-          "
-          class="text-3xl font-semibold"
-        >
-          Our Hospital Networks
+    <!-- 🔥 Search Form Overlay -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-6xl px-4">
+      <div class="bg-white bg-opacity-95 p-6 rounded-xl shadow-lg">
+        <h2 class="text-xl md:text-2xl font-semibold text-center text-gray-800 mb-6">
+          Get a Personalized Quote from Our Medical Experts
         </h2>
-        <a
-          href="#"
-          style="
+        <form class="flex flex-col md:flex-row gap-3 justify-center items-center">
+          <!-- Patient Name -->
+          <input type="text" placeholder="Patient Name*"
+            class="p-3 rounded-md bg-gray-100 border border-gray-300 w-full md:w-64 focus:outline-none" />
+
+          <!-- Country Code + Phone Number Group -->
+          <div class="flex w-full md:w-64">
+            <select class="bg-gray-100 border border-gray-300 px-2 pr-6 rounded-l-md focus:outline-none">
+              <option value="+91" selected>&#x1F1EE;&#x1F1F3; +91</option>
+            </select>
+            <input type="tel" placeholder="081234 56789"
+              class="flex-grow p-3 bg-gray-100 border-t border-b border-r border-gray-300 rounded-r-md focus:outline-none" />
+          </div>
+
+          <!-- Medical Problem -->
+          <input type="text" placeholder="Describe Your Medical Problem"
+            class="p-3 rounded-md bg-gray-100 border border-gray-300 w-full md:w-64 focus:outline-none" />
+
+          <!-- Submit Button -->
+          <button type="submit"
+            class="bg-[#00c6ff] text-white px-6 py-3 rounded-lg hover:bg-[#00cf81] w-full md:w-auto">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <!-- About Section -->
+  <section id="about" class="py-16" style="background: linear-gradient(to right, #00c6ff, #00cf81)">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Image Grid (Left Side) -->
+        <div class="grid grid-cols-2 gap-4">
+          <img
+            src="https://images.pexels.com/photos/8413162/pexels-photo-8413162.jpeg?_gl=1*ac54qv*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQyMTQkajU4JGwwJGgw" />
+          <img
+            src="https://images.pexels.com/photos/4769120/pexels-photo-4769120.jpeg?_gl=1*1va6t2i*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQyNTkkajEzJGwwJGgw"
+            alt="Operation Theater" class="w-full h-auto object-cover rounded-md shadow-md" />
+          <img
+            src="https://images.pexels.com/photos/6129582/pexels-photo-6129582.jpeg?_gl=1*fontoe*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQyOTkkajQ0JGwwJGgw"
+            alt="Wheelchair services" class="w-full h-auto object-cover rounded-md shadow-md" />
+          <img
+            src="https://images.pexels.com/photos/7089018/pexels-photo-7089018.jpeg?_gl=1*1r162i7*_ga*ODEwMzg2ODYxLjE3MzI3MjY5MjQ.*_ga_8JE65Q40S6*czE3NTM2Mjk2NTYkbzckZzEkdDE3NTM2MzQzMjkkajE0JGwwJGgw"
+            alt="Medical Scan" class="w-full h-auto object-cover rounded-md shadow-md" />
+        </div>
+
+        <!-- Content Section (Right Side) -->
+        <div>
+          <p class="text-4xl font-[1000] uppercase font-poppins tracking-widest text-white mb-2">
+            About
+          </p>
+          <h2 class="text-4xl font-medium text-white mb-6">
+            How Can We Help You?
+          </h2>
+          <p class="text-lg text-white mb-4">
+            <span class="font-semibold font-lora text-white">MedTour</span>
+            is an international medical tourism service that helps clients
+            connect with top hospitals and arrange personalized treatments
+            globally.
+          </p>
+          <p class="text-white font-loramb-4">
+            We partner with the best clinics worldwide to ensure you receive
+            the most favorable treatment options with full transparency and
+            care.
+          </p>
+          <p class="text-white font-lora mb-4">
+            Our dedicated experts assist you during difficult times by
+            identifying the right clinic, handling paperwork, and staying
+            connected throughout your recovery.
+          </p>
+
+          <ul class="list-disc list-inside text-left space-y-2 text-white">
+            <li>
+              <span class="text-white font-semibold">Plastic Surgery</span>
+            </li>
+            <li><span class="text-white font-semibold">Oncology</span></li>
+            <li>
+              <span class="text-white font-semibold">Obstetrics and Gynecology</span>
+            </li>
+            <li>
+              <span class="text-white font-semibold">Reproductive Health and more</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Treatments Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto">
+      <h3 style="
+            background: linear-gradient(to right, #00c6ff, #00cf81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          " class="text-4xl font-bold font-poppins text-center mb-10">
+        Popular Treatments
+      </h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Treatment Card -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+          <div class="rounded-md overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/8460089/pexels-photo-8460089.jpeg" alt="Cardiology"
+              class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
+          </div>
+          <h4 style="color: #00c6ff" class="text-2xl font-bold font-poppins mb-2">
+            Cardiology
+          </h4>
+          <p class="font-lora">
+            Advanced heart procedures including bypass surgery, angioplasty,
+            and more from leading cardiologists.
+          </p>
+        </div>
+
+        <!-- Repeat this pattern for each card -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+          <div class="rounded-md overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/30798553/pexels-photo-30798553.jpeg" alt="Orthopedics"
+              class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
+          </div>
+          <h4 style="color: #00c6ff" class="text-2xl font-bold font-poppins mb-2">
+            Orthopedic Surgery
+          </h4>
+          <p class="font-lora">
+            Joint replacement, spine surgery, and sports injury treatments at
+            world-class orthopedic centers.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+          <div class="rounded-md overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/7108227/pexels-photo-7108227.jpeg" alt="Cosmetic Surgery"
+              class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
+          </div>
+          <h4 style="color: #00c6ff" class="text-2xl font-bold text-blue-600 font-poppins mb-2">
+            Cosmetic Surgery
+          </h4>
+          <p class="font-lora">
+            Enhance appearance with safe and effective cosmetic procedures
+            from certified specialists.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+          <div class="rounded-md overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/6149009/pexels-photo-6149009.jpeg" alt="Fertility Treatment"
+              class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
+          </div>
+          <h4 style="color: #00c6ff" class="text-2xl font-bold text-blue-600 font-poppins mb-2">
+            Fertility Treatments
+          </h4>
+          <p class="font-lora">
+            Personalized fertility care including IVF, IUI, and egg donation
+            with high success rates.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+          <div class="rounded-md overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/6011602/pexels-photo-6011602.jpeg" alt="Cancer Treatment"
+              class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
+          </div>
+          <h4 style="color: #00c6ff" class="text-2xl font-bold text-blue-600 font-poppins mb-2">
+            Cancer Treatment
+          </h4>
+          <p class="font-lora">
+            State-of-the-art oncology centers offering chemotherapy,
+            radiation, and surgical oncology.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+          <div class="rounded-md overflow-hidden mb-4">
+            <img src="https://images.pexels.com/photos/7269618/pexels-photo-7269618.jpeg" alt="Organ Transplant"
+              class="w-full h-40 object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
+          </div>
+          <h4 style="color: #00c6ff" class="text-2xl font-bold font-poppins mb-2">
+            Organ Transplants
+          </h4>
+          <p class="font-lora">
+            Highly specialized transplant programs for kidney, liver, and
+            other vital organs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-12 px-6 text-white lg:px-24" style="background: #00cf81">
+    <h2 class="text-3xl font-bold text-gray-300 mb-2">
+      <span class="text-white">MediTour Features</span>
+    </h2>
+    <p class="text-white mb-10">
+      Easing out the patient treatment, enabling it with technology driven
+      solutions, patient care systems & transparency at each step of the
+      medical treatment in India.
+    </p>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-center">
+      <!-- Left Column -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="font-semibold text-lg mb-2">
+            Medical Counsellor Support
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <div class="text-rose-900 mr-2">✔</div> 24x7* Availability
+            </li>
+            <li class="flex items-center">
+              <div class="text-rose-600 mr-2">✔</div> Call & Chat Support
+            </li>
+            <li class="flex items-center">
+              <div class="text-rose-600 mr-2">✔</div> 14+ Languages Support
+            </li>
+            <li class="flex items-center">
+              <div class="text-rose-600 mr-2">✔</div> Treatment Recommendations
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Patient Care</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <span class="text-rose-600 mr-2">✔</span> Dedicated Staff at Hospital
+            </li>
+            <li class="flex items-center">
+              <span class="text-rose-600 mr-2">✔</span> Travel & accommodation assistance
+            </li>
+            <li class="flex items-center">
+              <span class="text-rose-600 mr-2">✔</span> Pickup and Drop Facilities
+            </li>
+            <li class="flex items-center">
+              <span class="text-rose-600 mr-2">✔</span> Easy Documentation Process
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- Center Image -->
+      <div class="flex justify-center">
+        <img src="/images/doctor-app-preview.png" alt="Mobile App Preview" class="max-h-96 w-auto" />
+      </div>
+
+      <!-- Right Column -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Treatment Packages</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>Treatment in your
+              budget
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>Best Doctors and
+              Surgeons
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>NABH & JCI accredited
+              Hospitals
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>Multiple Consultation
+              Options
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Technology Solutions</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>On Demand Video
+              Consultation
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>Secured health record
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>Track & Plan Your
+              Treatment
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✔</span>Book Lab Tests & Order
+              Medicines Online
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Comparison Section -->
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h3 style="
+            background: linear-gradient(to right, #00c6ff, #00cf81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          " class="text-3xl font-semibold font-poppins text-center mb-12">
+        Cost Comparison by Procedure
+      </h3>
+
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <!-- Table Header -->
+        <div style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+          class="grid grid-cols-4 text-white text-lg font-medium text-center">
+          <div class="p-4">Procedure</div>
+          <div class="p-4">USA</div>
+          <div class="p-4">UK</div>
+          <div class="p-4">India</div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="grid grid-cols-4 border-t text-center text-gray-800 hover:bg-blue-50 transition">
+          <div class="p-4 font-semibold">Knee Replacement</div>
+          <div class="p-4">$40,000</div>
+          <div class="p-4">£25,000</div>
+          <div class="p-4 text-green-600 font-bold">$5,000</div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-4 border-t text-center text-gray-800 hover:bg-blue-50 transition">
+          <div class="p-4 font-semibold">Heart Bypass</div>
+          <div class="p-4">$70,000</div>
+          <div class="p-4">£35,000</div>
+          <div class="p-4 text-green-600 font-bold">$7,500</div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid grid-cols-4 border-t text-center text-gray-800 hover:bg-blue-50 transition">
+          <div class="p-4 font-semibold">Cosmetic Surgery</div>
+          <div class="p-4">$15,000</div>
+          <div class="p-4">£10,000</div>
+          <div class="p-4 text-green-600 font-bold">$2,000</div>
+        </div>
+      </div>
+
+      <!-- Optional Callout -->
+      <p class="mt-8 text-center text-gray-600 text-md">
+        <strong class="text-green-700">Save up to 85%</strong> by choosing
+        India for quality medical procedures.
+      </p>
+    </div>
+  </section>
+
+  <!-- Partner Hospitals Section -->
+  <section class="py-12 px-4 md:px-16">
+    <div class="flex justify-between items-center mb-6">
+      <h2 style="
             background: linear-gradient(to right, #00c6ff, #00cf81);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-          "
-          class="font-medium hover:underline"
-          >View All →</a
-        >
-      </div>
+          " class="text-3xl font-semibold">
+        Our Hospital Networks
+      </h2>
+      <a href="#" style="
+            background: linear-gradient(to right, #00c6ff, #00cf81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+          " class="font-medium hover:underline">View All →</a>
+    </div>
 
-      <!-- Tabs -->
-      <div
-        id="tabs"
-        class="flex space-x-6 overflow-x-auto border-b border-gray-200 pb-2 mb-6 text-sm font-medium"
-      >
-        <button
-          class="tab-button text-blue-600 border-b-2 border-blue-600"
-          data-city="newdelhi"
-        >
-          New Delhi
-        </button>
-        <button
-          class="tab-button text-gray-700 hover:text-blue-600"
-          data-city="gurgaon"
-        >
-          Gurugram
-        </button>
-        <button
-          class="tab-button text-gray-700 hover:text-blue-600"
-          data-city="bengaluru"
-        >
-          Bengaluru
-        </button>
-        <button
-          class="tab-button text-gray-700 hover:text-blue-600"
-          data-city="kochi"
-        >
-          Kochi
-        </button>
-        <button
-          class="tab-button text-gray-700 hover:text-blue-600"
-          data-city="mumbai"
-        >
-          Mumbai
-        </button>
-        <button
-          class="tab-button text-gray-700 hover:text-blue-600"
-          data-city="chennai"
-        >
-          Chennai
-        </button>
-        <button
-          class="tab-button text-gray-700 hover:text-blue-600"
-          data-city="noida"
-        >
-          Noida
-        </button>
-        <button
-          class="tab-button text-gray-700 hover:text-blue-600"
-          data-city="kolkata"
-        >
-          Kolkata
-        </button>
-      </div>
+    <!-- Tabs -->
+    <div id="tabs" class="flex space-x-6 overflow-x-auto border-b border-gray-200 pb-2 mb-6 text-sm font-medium">
+      <button class="tab-button text-blue-600 border-b-2 border-blue-600" data-city="newdelhi">
+        New Delhi
+      </button>
+      <button class="tab-button text-gray-700 hover:text-blue-600" data-city="gurgaon">
+        Gurugram
+      </button>
+      <button class="tab-button text-gray-700 hover:text-blue-600" data-city="bengaluru">
+        Bengaluru
+      </button>
+      <button class="tab-button text-gray-700 hover:text-blue-600" data-city="kochi">
+        Kochi
+      </button>
+      <button class="tab-button text-gray-700 hover:text-blue-600" data-city="mumbai">
+        Mumbai
+      </button>
+      <button class="tab-button text-gray-700 hover:text-blue-600" data-city="chennai">
+        Chennai
+      </button>
+      <button class="tab-button text-gray-700 hover:text-blue-600" data-city="noida">
+        Noida
+      </button>
+      <button class="tab-button text-gray-700 hover:text-blue-600" data-city="kolkata">
+        Kolkata
+      </button>
+    </div>
 
-      <!-- Hospital Cards -->
-      <div
-        id="hospitalCards"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
-      >
-        <!-- New Delhi -->
-        <div class="hospital-card" data-city="newdelhi">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              ART Fertility Clinics, New Delhi
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
-            <button
-              class="w-full hover:bg-rose-600 text-white font-semibold py-2 rounded"
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <div class="hospital-card" data-city="newdelhi">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Indraprastha Apollo Hospital, New Delhi
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <!-- Gurgaon -->
-        <div class="hospital-card hidden" data-city="gurgaon">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Medanta - The Medicity, Gurgaon
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <div class="hospital-card hidden" data-city="gurgaon">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Artemis Hospital, Gurgaon
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <!-- Bengaluru -->
-        <div class="hospital-card hidden" data-city="bengaluru">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Manipal Hospitals, Bengaluru
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <div class="hospital-card hidden" data-city="bengaluru">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Apollo Hospitals, Bengaluru
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <!-- Kochi -->
-        <div class="hospital-card hidden" data-city="kochi">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Aster Medcity, Kochi
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <!-- Mumbai -->
-        <div class="hospital-card hidden" data-city="mumbai">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Kokilaben Dhirubhai Ambani Hospital, Mumbai
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <div class="hospital-card hidden" data-city="mumbai">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Lilavati Hospital, Mumbai
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <!-- Chennai -->
-        <div class="hospital-card hidden" data-city="chennai">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              MIOT International, Chennai
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <div class="hospital-card hidden" data-city="chennai">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Apollo Hospitals, Greams Road, Chennai
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <!-- Noida -->
-        <div class="hospital-card hidden" data-city="noida">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              Jaypee Hospital, Noida
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
-        </div>
-
-        <!-- Kolkata -->
-        <div class="hospital-card hidden" data-city="kolkata">
-          <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
-          <div class="bg-white rounded-b-xl shadow p-4">
-            <h3 class="font-semibold text-gray-800 text-sm mb-2">
-              AMRI Hospitals, Kolkata
-            </h3>
-            <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
-            <button
-              style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-              class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded"
-            >
-              BOOK APPOINTMENT
-            </button>
-          </div>
+    <!-- Hospital Cards -->
+    <div id="hospitalCards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <!-- New Delhi -->
+      <div class="hospital-card" data-city="newdelhi">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            ART Fertility Clinics, New Delhi
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
+          <button class="w-full hover:bg-rose-600 text-white font-semibold py-2 rounded"
+            style="background: linear-gradient(to right, #00c6ff, #00cf81)">
+            BOOK APPOINTMENT
+          </button>
         </div>
       </div>
-    </section>
 
-    <script>
-      const tabButtons = document.querySelectorAll(".tab-button");
-      const hospitalCards = document.querySelectorAll(".hospital-card");
+      <div class="hospital-card" data-city="newdelhi">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Indraprastha Apollo Hospital, New Delhi
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
 
-      tabButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          // Remove active styles from all tabs
-          tabButtons.forEach((btn) =>
-            btn.classList.remove(
-              "text-blue-900",
-              "border-b-2",
-              "border-blue-900"
-            )
-          );
-          tabButtons.forEach((btn) => btn.classList.add("text-gray-700"));
+      <!-- Gurgaon -->
+      <div class="hospital-card hidden" data-city="gurgaon">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Medanta - The Medicity, Gurgaon
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
 
-          // Set active tab
-          button.classList.remove("text-gray-700");
-          button.classList.add(
+      <div class="hospital-card hidden" data-city="gurgaon">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Artemis Hospital, Gurgaon
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <!-- Bengaluru -->
+      <div class="hospital-card hidden" data-city="bengaluru">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Manipal Hospitals, Bengaluru
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <div class="hospital-card hidden" data-city="bengaluru">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Apollo Hospitals, Bengaluru
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <!-- Kochi -->
+      <div class="hospital-card hidden" data-city="kochi">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Aster Medcity, Kochi
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <!-- Mumbai -->
+      <div class="hospital-card hidden" data-city="mumbai">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Kokilaben Dhirubhai Ambani Hospital, Mumbai
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <div class="hospital-card hidden" data-city="mumbai">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Lilavati Hospital, Mumbai
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <!-- Chennai -->
+      <div class="hospital-card hidden" data-city="chennai">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            MIOT International, Chennai
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <div class="hospital-card hidden" data-city="chennai">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Apollo Hospitals, Greams Road, Chennai
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <!-- Noida -->
+      <div class="hospital-card hidden" data-city="noida">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            Jaypee Hospital, Noida
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐☆</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+
+      <!-- Kolkata -->
+      <div class="hospital-card hidden" data-city="kolkata">
+        <img src="https://via.placeholder.com/300x200" class="rounded-t-xl" />
+        <div class="bg-white rounded-b-xl shadow p-4">
+          <h3 class="font-semibold text-gray-800 text-sm mb-2">
+            AMRI Hospitals, Kolkata
+          </h3>
+          <div class="text-yellow-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
+          <button style="background: linear-gradient(to right, #00c6ff, #00cf81)"
+            class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 rounded">
+            BOOK APPOINTMENT
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const hospitalCards = document.querySelectorAll(".hospital-card");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Remove active styles from all tabs
+        tabButtons.forEach((btn) =>
+          btn.classList.remove(
             "text-blue-900",
             "border-b-2",
             "border-blue-900"
-          );
+          )
+        );
+        tabButtons.forEach((btn) => btn.classList.add("text-gray-700"));
 
-          const selectedCity = button.getAttribute("data-city");
+        // Set active tab
+        button.classList.remove("text-gray-700");
+        button.classList.add(
+          "text-blue-900",
+          "border-b-2",
+          "border-blue-900"
+        );
 
-          // Show/hide hospital cards
-          hospitalCards.forEach((card) => {
-            if (card.getAttribute("data-city") === selectedCity) {
-              card.classList.remove("hidden");
-            } else {
-              card.classList.add("hidden");
-            }
-          });
+        const selectedCity = button.getAttribute("data-city");
+
+        // Show/hide hospital cards
+        hospitalCards.forEach((card) => {
+          if (card.getAttribute("data-city") === selectedCity) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
         });
       });
-    </script>
+    });
+  </script>
 
-    <!-- Testimonials Carousel Section -->
-    <section
-      class="py-16"
-      style="background: linear-gradient(to right, #00c6ff, #00cf81)"
-    >
-      <div class="container mx-auto text-center">
-        <h3 class="text-4xl text-white font-poppins font-bold mb-8">
-          What Our Patients Say
-        </h3>
+  <!-- Testimonials Carousel Section -->
+  <section class="py-16" style="background: linear-gradient(to right, #00c6ff, #00cf81)">
+    <div class="container mx-auto text-center">
+      <h3 class="text-4xl text-white font-poppins font-bold mb-8">
+        What Our Patients Say
+      </h3>
 
-        <!-- Swiper Container -->
-        <div class="swiper testimonialSwiper px-4">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div
-              class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto"
-            >
-              <p class="italic">
-                "Thanks to MedTour, I got my knee surgery done in India for a
-                fraction of the price here in the US. Everything was taken care
-                of!"
-              </p>
-              <p class="mt-4 font-bold text-blue-600">– Sarah M., USA</p>
-            </div>
-
-            <!-- Slide 2 -->
-            <div
-              class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto"
-            >
-              <p class="italic">
-                "The whole trip was smooth — from airport pickup to hospital
-                stay. Highly recommended for anyone seeking affordable medical
-                care."
-              </p>
-              <p class="mt-4 font-bold text-blue-600">– Ahmed K., UAE</p>
-            </div>
-
-            <!-- Slide 3 (add more if needed) -->
-            <div
-              class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto"
-            >
-              <p class="italic">
-                "MedTour handled everything professionally — doctors, hotels,
-                local guides. I felt safe and supported."
-              </p>
-              <p class="mt-4 font-bold text-blue-600">– Lina R., Kenya</p>
-            </div>
-
-            <div
-              class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto"
-            >
-              <p class="italic">
-                "Thanks to MedTour, I got my knee surgery done in India for a
-                fraction of the price here in the US. Everything was taken care
-                of!"
-              </p>
-              <p class="mt-4 font-bold text-blue-600">– Sarah M., USA</p>
-            </div>
-            <div
-              class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto"
-            >
-              <p class="italic">
-                "Thanks to MedTour, I got my knee surgery done in India for a
-                fraction of the price here in the US. Everything was taken care
-                of!"
-              </p>
-              <p class="mt-4 font-bold text-blue-600">– Sarah M., USA</p>
-            </div>
+      <!-- Swiper Container -->
+      <div class="swiper testimonialSwiper px-4">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
+            <p class="italic">
+              "Thanks to MedTour, I got my knee surgery done in India for a
+              fraction of the price here in the US. Everything was taken care
+              of!"
+            </p>
+            <p class="mt-4 font-bold text-blue-600">– Sarah M., USA</p>
           </div>
 
-          <!-- Pagination & Navigation (Optional) -->
-          <div class="swiper-pagination mt-6"></div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
+            <p class="italic">
+              "The whole trip was smooth — from airport pickup to hospital
+              stay. Highly recommended for anyone seeking affordable medical
+              care."
+            </p>
+            <p class="mt-4 font-bold text-blue-600">– Ahmed K., UAE</p>
+          </div>
+
+          <!-- Slide 3 (add more if needed) -->
+          <div class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
+            <p class="italic">
+              "MedTour handled everything professionally — doctors, hotels,
+              local guides. I felt safe and supported."
+            </p>
+            <p class="mt-4 font-bold text-blue-600">– Lina R., Kenya</p>
+          </div>
+
+          <div class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
+            <p class="italic">
+              "Thanks to MedTour, I got my knee surgery done in India for a
+              fraction of the price here in the US. Everything was taken care
+              of!"
+            </p>
+            <p class="mt-4 font-bold text-blue-600">– Sarah M., USA</p>
+          </div>
+          <div class="swiper-slide bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
+            <p class="italic">
+              "Thanks to MedTour, I got my knee surgery done in India for a
+              fraction of the price here in the US. Everything was taken care
+              of!"
+            </p>
+            <p class="mt-4 font-bold text-blue-600">– Sarah M., USA</p>
+          </div>
         </div>
+
+        <!-- Pagination & Navigation (Optional) -->
+        <div class="swiper-pagination mt-6"></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- How It Works Section -->
-    <section class="py-16 px-4 md:px-16 lg:px-24 relative overflow-hidden">
-      <!-- Background decorative line -->
+  <!-- How It Works Section -->
+  <section class="py-16 px-4 md:px-16 lg:px-24 relative overflow-hidden">
+    <!-- Background decorative line -->
+    <div
+      class="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-green-400 to-cyan-400 opacity-30 hidden xl:block">
+    </div>
+
+    <div class="text-center mb-16 relative z-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        <span style="
+          background: linear-gradient(to right, #00c6ff, #00cf81);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+        ">
+          How it works to help you
+        </span>
+      </h2>
+      <p class="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
+        Experience a smooth & transparent journey from Discovery to Discharge with our step-by-step process.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center items-center gap-10 relative z-10">
+      <!-- STEP TEMPLATE -->
       <div
-        class="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-green-400 to-cyan-400 opacity-30 hidden xl:block"
-      ></div>
-
-      <div class="text-center mb-16 relative z-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-          <span
-            style="
-              background: linear-gradient(to right, #00c6ff, #00cf81);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              display: inline-block;
-            "
-          >
-            How it works to help you
-          </span>
-        </h2>
-        <p class="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
-          Experience a smooth & transparent journey from Discovery to Discharge
-          with our step-by-step process.
+        class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl">
+        <div
+          class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          1</div>
+        <div class="mb-4">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500">
+            📞
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Enquiry</h3>
+        <p class="text-gray-700 text-sm">
+          Drop your queries and our team will reach out with personalised assistance.
         </p>
       </div>
 
+      <!-- Animated Arrow -->
+      <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">➜</div>
+
       <div
-        class="flex flex-wrap justify-center items-center gap-10 relative z-10"
-      >
-        <!-- STEP TEMPLATE -->
+        class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl">
         <div
-          class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl"
-        >
+          class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          2</div>
+        <div class="mb-4">
           <div
-            class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-          >
-            1
+            class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500">
+            🧑‍⚕️
           </div>
-          <div class="mb-4">
-            <div
-              class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500"
-            >
-              📞
-            </div>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Enquiry</h3>
-          <p class="text-gray-700 text-sm">
-            Drop your queries and our team will reach out with personalised
-            assistance.
-          </p>
         </div>
-
-        <!-- Animated Arrow -->
-        <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">
-          ➜
-        </div>
-
-        <div
-          class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-          >
-            2
-          </div>
-          <div class="mb-4">
-            <div
-              class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500"
-            >
-              🧑‍⚕️
-            </div>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Medical Counselor</h3>
-          <p class="text-gray-700 text-sm">
-            Get one-on-one expert guidance and complete support from our medical
-            counsellor.
-          </p>
-        </div>
-
-        <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">
-          ➜
-        </div>
-
-        <div
-          class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-          >
-            3
-          </div>
-          <div class="mb-4">
-            <div
-              class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500"
-            >
-              📝
-            </div>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Treatment Planning</h3>
-          <p class="text-gray-700 text-sm">
-            From visa to booking the best affordable treatment packages.
-          </p>
-        </div>
-
-        <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">
-          ➜
-        </div>
-
-        <div
-          class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-          >
-            4
-          </div>
-          <div class="mb-4">
-            <div
-              class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500"
-            >
-              🛏️
-            </div>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Hassle-Free Treatment</h3>
-          <p class="text-gray-700 text-sm">
-            Receive top-class care from reputed hospitals and expert doctors.
-          </p>
-        </div>
-
-        <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">
-          ➜
-        </div>
-
-        <div
-          class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-          >
-            5
-          </div>
-          <div class="mb-4">
-            <div
-              class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500"
-            >
-              📤
-            </div>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Discharge</h3>
-          <p class="text-gray-700 text-sm">
-            Smooth and quick discharge with all documentation handled.
-          </p>
-        </div>
-
-        <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">
-          ➜
-        </div>
-
-        <div
-          class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl"
-        >
-          <div
-            class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-          >
-            6
-          </div>
-          <div class="mb-4">
-            <div
-              class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500"
-            >
-              💊
-            </div>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Follow-Up Care</h3>
-          <p class="text-gray-700 text-sm">
-            Post-treatment follow-ups and medicine fulfilments made easy.
-          </p>
-        </div>
+        <h3 class="font-bold text-lg mb-2">Medical Counselor</h3>
+        <p class="text-gray-700 text-sm">
+          Get one-on-one expert guidance and complete support from our medical counsellor.
+        </p>
       </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section
-      class="relative py-16 bg-cover bg-center bg-no-repeat"
-      style="
+      <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">➜</div>
+
+      <div
+        class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl">
+        <div
+          class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          3</div>
+        <div class="mb-4">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500">
+            📝
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Treatment Planning</h3>
+        <p class="text-gray-700 text-sm">
+          From visa to booking the best affordable treatment packages.
+        </p>
+      </div>
+
+      <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">➜</div>
+
+      <div
+        class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl">
+        <div
+          class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          4</div>
+        <div class="mb-4">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500">
+            🛏️
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Hassle-Free Treatment</h3>
+        <p class="text-gray-700 text-sm">
+          Receive top-class care from reputed hospitals and expert doctors.
+        </p>
+      </div>
+
+      <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">➜</div>
+
+      <div
+        class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl">
+        <div
+          class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          5</div>
+        <div class="mb-4">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500">
+            📤
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Discharge</h3>
+        <p class="text-gray-700 text-sm">
+          Smooth and quick discharge with all documentation handled.
+        </p>
+      </div>
+
+      <div class="hidden xl:flex text-4xl text-green-400 animate-pulse">➜</div>
+
+      <div
+        class="relative group w-64 text-center p-6 rounded-2xl shadow-lg bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md border border-white/50 hover:scale-105 transition-all duration-500 hover:shadow-xl">
+        <div
+          class="absolute -top-4 -left-4 bg-gradient-to-r from-cyan-500 to-green-400 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+          6</div>
+        <div class="mb-4">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform duration-500">
+            💊
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Follow-Up Care</h3>
+        <p class="text-gray-700 text-sm">
+          Post-treatment follow-ups and medicine fulfilments made easy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="relative py-16 bg-cover bg-center bg-no-repeat" style="
         background-image: linear-gradient(
             to right,
             rgba(0, 198, 255, 0.6),
             rgba(0, 207, 129, 0.6)
           ),
           url('https://images.pexels.com/photos/1887995/pexels-photo-1887995.jpeg');
-      "
-    >
-      <!-- Removed overlay div -->
+      ">
+    <!-- Removed overlay div -->
 
-      <div class="relative container mx-auto max-w-3xl text-white">
-        <h3 class="text-3xl font-semibold text-center mb-8">
-          Frequently Asked Questions
-        </h3>
-        <div class="space-y-4">
-          <!-- FAQ 1 -->
-          <details
-            class="bg-white bg-opacity-90 text-gray-900 p-4 rounded-lg shadow"
-          >
-            <summary class="cursor-pointer font-semibold text-lg">
-              Do I need a visa for medical travel?
-            </summary>
-            <p class="mt-2">
-              Yes, you’ll require a medical visa. We provide full visa
-              assistance including an invitation letter from the hospital.
-            </p>
-          </details>
-
-          <!-- FAQ 2 -->
-          <details
-            class="bg-white bg-opacity-90 text-gray-900 p-4 rounded-lg shadow"
-          >
-            <summary class="cursor-pointer font-semibold text-lg">
-              What is included in the package?
-            </summary>
-            <p class="mt-2">
-              Our package covers doctor consultation, hospital stay, airport
-              transfers, and language interpreter (if needed).
-            </p>
-          </details>
-
-          <!-- FAQ 3 -->
-          <details
-            class="bg-white bg-opacity-90 text-gray-900 p-4 rounded-lg shadow"
-          >
-            <summary class="cursor-pointer font-semibold text-lg">
-              Is my personal data safe?
-            </summary>
-            <p class="mt-2">
-              Yes. Your medical records are encrypted and shared only with your
-              consent for medical review.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section
-      id="contact"
-      class="py-16 bg-cover bg-center relative"
-      style="background-image: url('./images/contactus.jpg')"
-    >
-      <div class="absolute inset-0 bg-blue-300 bg-opacity-70"></div>
-
-      <div class="relative container mx-auto px-4">
-        <div
-          class="max-w-2xl mx-auto bg-white bg-opacity-90 p-8 rounded-lg shadow-lg"
-        >
-          <h3
-            style="color: #00c6ff"
-            class="text-3xl font-semibold mb-6 font-poppins text-center"
-          >
-            Contact Us
-          </h3>
-          <form id="contactForm" class="space-y-4">
-            <div>
-              <input
-                type="text"
-                id="name"
-                placeholder="Your Name"
-                class="w-full p-3 rounded border border-gray-300"
-              />
-              <p class="text-red-500 text-sm mt-1 hidden" id="nameError">
-                Please enter your name.
-              </p>
-            </div>
-
-            <div>
-              <input
-                type="email"
-                id="email"
-                placeholder="Your Email"
-                class="w-full p-3 rounded border border-gray-300"
-              />
-              <p class="text-red-500 text-sm mt-1 hidden" id="emailError">
-                Please enter a valid email.
-              </p>
-            </div>
-
-            <div>
-              <textarea
-                id="message"
-                placeholder="Your Message"
-                class="w-full p-3 rounded border border-gray-300"
-                rows="5"
-              ></textarea>
-              <p class="text-red-500 text-sm mt-1 hidden" id="messageError">
-                Please enter your message.
-              </p>
-            </div>
-
-            <div class="text-center">
-              <button
-                type="submit"
-                class="bg-[#00c6ff] text-white px-6 py-3 rounded-lg hover:bg-[#00cf81] w-full md:w-auto"
-              >
-                Submit
-              </button>
-            </div>
-            <p
-              id="successMessage"
-              class="text-green-600 font-medium mt-4 hidden"
-            >
-              Thank you! Your message has been sent.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- JavaScript Validation -->
-    <!-- Firebase App (core SDK) -->
-    <script type="module">
-      // Import Firebase SDK (modular v9+)
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-        serverTimestamp,
-      } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-
-      // Your Firebase config (replace with your own)
-      const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-        databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_PROJECT_ID.appspot.com",
-        messagingSenderId: "SENDER_ID",
-        appId: "APP_ID",
-      };
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const message = document.getElementById("message").value.trim();
-
-          const nameError = document.getElementById("nameError");
-          const emailError = document.getElementById("emailError");
-          const messageError = document.getElementById("messageError");
-          const successMessage = document.getElementById("successMessage");
-
-          nameError.classList.add("hidden");
-          emailError.classList.add("hidden");
-          messageError.classList.add("hidden");
-          successMessage.classList.add("hidden");
-
-          let isValid = true;
-
-          if (name === "") {
-            nameError.classList.remove("hidden");
-            isValid = false;
-          }
-
-          const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
-          if (!emailPattern.test(email)) {
-            emailError.classList.remove("hidden");
-            isValid = false;
-          }
-
-          if (message === "") {
-            messageError.classList.remove("hidden");
-            isValid = false;
-          }
-
-          if (isValid) {
-            try {
-              await addDoc(collection(db, "messages"), {
-                name,
-                email,
-                message,
-                createdAt: serverTimestamp(),
-              });
-              successMessage.classList.remove("hidden");
-              document.getElementById("contactForm").reset();
-            } catch (error) {
-              alert("Error saving message: " + error.message);
-            }
-          }
-        });
-    </script>
-
-    <!-- Footer -->
-    <footer class="text-white pt-12 pb-6" style="background: #00cf81">
-      <div
-        class="container mx-auto px-4 grid md:grid-cols-4 sm:grid-cols-2 gap-8 text-left"
-      >
-        <!-- Company Info -->
-        <div>
-          <img src="./images/logotwo.png" alt="" srcset="" />
-          <p class="text-sm text-black">
-            Your trusted partner in medical tourism. We connect you with
-            world-class hospitals and ensure a hassle-free treatment journey.
+    <div class="relative container mx-auto max-w-3xl text-white">
+      <h3 class="text-3xl font-semibold text-center mb-8">
+        Frequently Asked Questions
+      </h3>
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <details class="bg-white bg-opacity-90 text-gray-900 p-4 rounded-lg shadow">
+          <summary class="cursor-pointer font-semibold text-lg">
+            Do I need a visa for medical travel?
+          </summary>
+          <p class="mt-2">
+            Yes, you’ll require a medical visa. We provide full visa
+            assistance including an invitation letter from the hospital.
           </p>
-        </div>
+        </details>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2 text-sm text-blue-200">
-            <li class="text-black">
-              <a href="#home" class="hover:text-white">Home</a>
-            </li>
-            <li class="text-black">
-              <a href="#about" class="hover:text-white">Why Choose Us</a>
-            </li>
-            <li class="text-black">
-              <a href="#about" class="hover:text-white">Why Choose Us</a>
-            </li>
-            <li class="text-black">
-              <a href="#services" class="hover:text-white">Our Services</a>
-            </li>
-            <li class="text-black">
-              <a href="#contact" class="hover:text-white">Contact</a>
-            </li>
-          </ul>
-        </div>
+        <!-- FAQ 2 -->
+        <details class="bg-white bg-opacity-90 text-gray-900 p-4 rounded-lg shadow">
+          <summary class="cursor-pointer font-semibold text-lg">
+            What is included in the package?
+          </summary>
+          <p class="mt-2">
+            Our package covers doctor consultation, hospital stay, airport
+            transfers, and language interpreter (if needed).
+          </p>
+        </details>
 
-        <!-- Contact Info -->
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Contact</h4>
-          <ul class="text-sm text-blue-200 space-y-2">
-            <li class="text-black">
-              <span class="font-semibold">Email:</span> support@medtour.com
-            </li>
-            <li class="text-black">
-              <span class="font-semibold">Phone:</span> +91-9876543210
-            </li>
-            <li class="text-black">
-              <span class="font-semibold">Address:</span> Delhi NCR, India
-            </li>
-          </ul>
-        </div>
-
-        <!-- Social Media -->
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-          <div class="flex space-x-4">
-            <a href="#" class="hover:text-white"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" class="hover:text-white"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="#" class="hover:text-white"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" class="hover:text-white"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-          </div>
-        </div>
+        <!-- FAQ 3 -->
+        <details class="bg-white bg-opacity-90 text-gray-900 p-4 rounded-lg shadow">
+          <summary class="cursor-pointer font-semibold text-lg">
+            Is my personal data safe?
+          </summary>
+          <p class="mt-2">
+            Yes. Your medical records are encrypted and shared only with your
+            consent for medical review.
+          </p>
+        </details>
       </div>
+    </div>
+  </section>
 
-      <div class="text-center mt-8 border-t pt-4 text-sm text-black">
-        &copy; 2025 MedTour. All rights reserved.
-      </div>
-    </footer>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-cover bg-center relative"
+    style="background-image: url('./images/contactus.jpg')">
+    <div class="absolute inset-0 bg-blue-300 bg-opacity-70"></div>
 
-    <!-- Consultant form  -->
-    <dialog id="dialog" class="backdrop:bg-black/50 rounded-lg p-0 border-none">
-      <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
-        <!-- Close Button -->
-        <button
-          class="absolute top-3 right-1 text-gray-500 hover:text-red-500 text-2xl font-bold"
-          id="closeModal"
-        >
-          ×
-        </button>
-
-        <!-- Header -->
-        <h2 class="text-center text-xl font-semibold text-teal-600 mb-4">
-          Book Your <span class="text-green-600 font-bold">FREE</span>
-          Consultation Now 🏥
-        </h2>
-
-        <!-- Form -->
-        <form id="consultationForm" class="space-y-4">
-          <!-- Patient Name -->
+    <div class="relative container mx-auto px-4">
+      <div class="max-w-2xl mx-auto bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
+        <h3 style="color: #00c6ff" class="text-3xl font-semibold mb-6 font-poppins text-center">
+          Contact Us
+        </h3>
+        <form id="contactForm" class="space-y-4">
           <div>
-            <label class="block text-gray-700 font-medium mb-1"
-              >Patient Name <span class="text-red-600">*</span></label
-            >
-            <input
-              type="text"
-              placeholder="Patient Name*"
-              required
-              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-            />
+            <input type="text" id="name" placeholder="Your Name" class="w-full p-3 rounded border border-gray-300" />
+            <p class="text-red-500 text-sm mt-1 hidden" id="nameError">
+              Please enter your name.
+            </p>
           </div>
 
-          <!-- Mobile Number -->
           <div>
-            <label class="block text-gray-700 font-medium mb-1"
-              >Mobile Number <span class="text-red-600">*</span></label
-            >
-            <div class="flex items-center space-x-2">
-              <select
-                class="border border-gray-300 rounded px-2 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-              >
-                <option value="+91">🇮🇳 +91</option>
-              </select>
-              <input
-                type="tel"
-                placeholder="081234 56789"
-                required
-                class="flex-1 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-              />
-            </div>
+            <input type="email" id="email" placeholder="Your Email" class="w-full p-3 rounded border border-gray-300" />
+            <p class="text-red-500 text-sm mt-1 hidden" id="emailError">
+              Please enter a valid email.
+            </p>
           </div>
 
-          <!-- Medical Problem -->
           <div>
-            <label class="block text-gray-700 font-medium mb-1"
-              >Describe Your Medical Problem</label
-            >
-            <textarea
-              placeholder="Describe Your Medical Problem"
-              rows="4"
-              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-            ></textarea>
+            <textarea id="message" placeholder="Your Message" class="w-full p-3 rounded border border-gray-300"
+              rows="5"></textarea>
+            <p class="text-red-500 text-sm mt-1 hidden" id="messageError">
+              Please enter your message.
+            </p>
           </div>
 
-          <!-- Submit Button -->
-          <button
-            type="submit"
-            class="w-full bg-gradient-to-r from-[#00c6ff] to-[#00cf81] text-white font-bold py-2 rounded hover:opacity-90 transition"
-          >
-            SUBMIT
-          </button>
+          <div class="text-center">
+            <button type="submit"
+              class="bg-[#00c6ff] text-white px-6 py-3 rounded-lg hover:bg-[#00cf81] w-full md:w-auto">
+              Submit
+            </button>
+          </div>
+          <p id="successMessage" class="text-green-600 font-medium mt-4 hidden">
+            Thank you! Your message has been sent.
+          </p>
         </form>
+      </div>
+    </div>
+  </section>
 
-        <!-- Footer Stats -->
-        <div
-          class="mt-6 flex justify-around text-center text-sm text-gray-700 font-semibold"
-        >
-          <div>
-            <span class="text-teal-600 text-xl block">100,000+</span>
-            Patients Assisted
-          </div>
-          <div>
-            <span class="text-teal-600 text-xl block">125+</span>
-            Countries
-          </div>
-          <div>
-            <span class="text-teal-600 text-xl block">11+</span>
-            Language Support
-          </div>
+  <!-- JavaScript Validation -->
+<!-- Firebase App (core SDK) -->
+<script type="module">
+  // Import Firebase SDK (modular v9+)
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+  // Your Firebase config (replace with your own)
+ const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "SENDER_ID",
+            appId: "APP_ID"
+        };
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const messageError = document.getElementById("messageError");
+    const successMessage = document.getElementById("successMessage");
+
+    nameError.classList.add("hidden");
+    emailError.classList.add("hidden");
+    messageError.classList.add("hidden");
+    successMessage.classList.add("hidden");
+
+    let isValid = true;
+
+    if (name === "") {
+      nameError.classList.remove("hidden");
+      isValid = false;
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      emailError.classList.remove("hidden");
+      isValid = false;
+    }
+
+    if (message === "") {
+      messageError.classList.remove("hidden");
+      isValid = false;
+    }
+
+    if (isValid) {
+      try {
+        await addDoc(collection(db, "messages"), {
+          name,
+          email,
+          message,
+          createdAt: serverTimestamp()
+        });
+        successMessage.classList.remove("hidden");
+        document.getElementById("contactForm").reset();
+      } catch (error) {
+        alert("Error saving message: " + error.message);
+      }
+    }
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="text-white pt-12 pb-6" style="background: #00cf81">
+    <div class="container mx-auto px-4 grid md:grid-cols-4 sm:grid-cols-2 gap-8 text-left">
+      <!-- Company Info -->
+      <div>
+        <img src="./images/logotwo.png" alt="" srcset="" />
+        <p class="text-sm text-black">
+          Your trusted partner in medical tourism. We connect you with
+          world-class hospitals and ensure a hassle-free treatment journey.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-blue-200">
+          <li class="text-black">
+            <a href="#home" class="hover:text-white">Home</a>
+          </li>
+          <li class="text-black">
+            <a href="#about" class="hover:text-white">Why Choose Us</a>
+          </li>
+          <li class="text-black">
+            <a href="#about" class="hover:text-white">Why Choose Us</a>
+          </li>
+          <li class="text-black">
+            <a href="#services" class="hover:text-white">Our Services</a>
+          </li>
+          <li class="text-black">
+            <a href="#contact" class="hover:text-white">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Contact</h4>
+        <ul class="text-sm text-blue-200 space-y-2">
+          <li class="text-black">
+            <span class="font-semibold">Email:</span> support@medtour.com
+          </li>
+          <li class="text-black">
+            <span class="font-semibold">Phone:</span> +91-9876543210
+          </li>
+          <li class="text-black">
+            <span class="font-semibold">Address:</span> Delhi NCR, India
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
-    </dialog>
+    </div>
 
-    <!-- It is Js -->
-    <script>
-      const dialog = document.getElementById("dialog");
-      const closeBtn = document.getElementById("closeModal");
+    <div class="text-center mt-8 border-t pt-4 text-sm text-black">
+      &copy; 2025 MedTour. All rights reserved.
+    </div>
+  </footer>
 
-      let modalOpened = false; // Ensure it opens only once
+  <!-- Consultant form  -->
+  <dialog id="dialog" class="backdrop:bg-black/50 rounded-lg p-0 border-none">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
+      <!-- Close Button -->
+      <button class="absolute top-3 right-1 text-gray-500 hover:text-red-500 text-2xl font-bold" id="closeModal">
+        ×
+      </button>
 
-      // Close button (×)
-      closeBtn.addEventListener("click", () => {
+      <!-- Header -->
+      <h2 class="text-center text-xl font-semibold text-teal-600 mb-4">
+        Book Your <span class="text-green-600 font-bold">FREE</span>
+        Consultation Now 🏥
+      </h2>
+
+      <!-- Form -->
+      <form id="consultationForm" class="space-y-4">
+        <!-- Patient Name -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Patient Name <span class="text-red-600">*</span></label>
+          <input type="text" placeholder="Patient Name*" required
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" />
+        </div>
+
+        <!-- Mobile Number -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Mobile Number <span class="text-red-600">*</span></label>
+          <div class="flex items-center space-x-2">
+            <select
+              class="border border-gray-300 rounded px-2 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+              <option value="+91">🇮🇳 +91</option>
+            </select>
+            <input type="tel" placeholder="081234 56789" required
+              class="flex-1 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" />
+          </div>
+        </div>
+
+        <!-- Medical Problem -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Describe Your Medical Problem</label>
+          <textarea placeholder="Describe Your Medical Problem" rows="4"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-[#00c6ff] to-[#00cf81] text-white font-bold py-2 rounded hover:opacity-90 transition">
+          SUBMIT
+        </button>
+      </form>
+
+      <!-- Footer Stats -->
+      <div class="mt-6 flex justify-around text-center text-sm text-gray-700 font-semibold">
+        <div>
+          <span class="text-teal-600 text-xl block">100,000+</span>
+          Patients Assisted
+        </div>
+        <div>
+          <span class="text-teal-600 text-xl block">125+</span>
+          Countries
+        </div>
+        <div>
+          <span class="text-teal-600 text-xl block">11+</span>
+          Language Support
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- It is Js -->
+  <script>
+    const dialog = document.getElementById("dialog");
+    const closeBtn = document.getElementById("closeModal");
+
+    let modalOpened = false; // Ensure it opens only once
+
+    // Close button (×)
+    closeBtn.addEventListener("click", () => {
+      dialog.close();
+    });
+
+    // Close when clicking outside the modal content
+    dialog.addEventListener("click", function (event) {
+      const rect = this.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+
+      if (!isInDialog) {
+        dialog.close();
+      }
+    });
+
+    // Handle form submission
+    document
+      .getElementById("consultationForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Form submitted successfully!");
         dialog.close();
       });
 
-      // Close when clicking outside the modal content
-      dialog.addEventListener("click", function (event) {
-        const rect = this.getBoundingClientRect();
-        const isInDialog =
-          rect.top <= event.clientY &&
-          event.clientY <= rect.top + rect.height &&
-          rect.left <= event.clientX &&
-          event.clientX <= rect.left + rect.width;
+    // Auto open modal when 25% scroll reached
+    window.addEventListener("scroll", function () {
+      if (modalOpened) return;
 
-        if (!isInDialog) {
-          dialog.close();
-        }
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrolledPercentage = (scrollTop / docHeight) * 100;
+
+      if (scrolledPercentage >= 25) {
+        dialog.showModal();
+        modalOpened = true;
+      }
+    });
+  </script>
+
+  <!-- Ends Here -->
+
+  <!-- SwiperJS Init -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        effect: "fade", // Optional: looks smooth on hero carousels
+        fadeEffect: {
+          crossFade: true,
+        },
       });
+    });
 
-      // Handle form submission
-      document
-        .getElementById("consultationForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("Form submitted successfully!");
-          dialog.close();
+    document.addEventListener("DOMContentLoaded", function () {
+      new Swiper(".testimonialSwiper", {
+        loop: true, // ✅ allows infinite repeating
+        autoplay: {
+          delay: 4000, // 4s per slide
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        grabCursor: true,
+        spaceBetween: 20,
+        centeredSlides: true,
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    });
+    window.addEventListener("scroll", function () {
+      const navbar = document.getElementById("navbar");
+      const navLinks = document.querySelectorAll("#navLinks a.nav-link"); // Includes Services
+
+      if (window.scrollY > 50) {
+        navbar.classList.remove("bg-transparent", "bg-opacity-20");
+        navbar.classList.add("bg-white", "shadow-md");
+
+        navLinks.forEach((link) => {
+          link.classList.remove("text-white");
+          link.classList.add("text-black", "hover:text-[#00cf81]");
         });
+      } else {
+        navbar.classList.remove("bg-white", "shadow-md");
+        navbar.classList.add("bg-transparent", "bg-opacity-20");
 
-      // Auto open modal when 25% scroll reached
-      window.addEventListener("scroll", function () {
-        if (modalOpened) return;
-
-        const scrollTop = window.scrollY;
-        const docHeight =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const scrolledPercentage = (scrollTop / docHeight) * 100;
-
-        if (scrolledPercentage >= 25) {
-          dialog.showModal();
-          modalOpened = true;
-        }
-      });
-    </script>
-
-    <!-- Ends Here -->
-
-    <!-- SwiperJS Init -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var swiper = new Swiper(".mySwiper", {
-          loop: true,
-          autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          effect: "fade", // Optional: looks smooth on hero carousels
-          fadeEffect: {
-            crossFade: true,
-          },
+        navLinks.forEach((link) => {
+          link.classList.remove("text-black", "hover:text-[#00cf81]");
+          link.classList.add("text-white");
         });
-      });
+      }
+    });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        new Swiper(".testimonialSwiper", {
-          loop: true, // ✅ allows infinite repeating
-          autoplay: {
-            delay: 4000, // 4s per slide
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          grabCursor: true,
-          spaceBetween: 20,
-          centeredSlides: true,
-          breakpoints: {
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          },
-        });
-      });
-      window.addEventListener("scroll", function () {
-        const navbar = document.getElementById("navbar");
-        const navLinks = document.querySelectorAll("#navLinks a.nav-link"); // Includes Services
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-        if (window.scrollY > 50) {
-          navbar.classList.remove("bg-transparent", "bg-opacity-20");
-          navbar.classList.add("bg-white", "shadow-md");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+    });
+  </script>
+</body>
 
-          navLinks.forEach((link) => {
-            link.classList.remove("text-white");
-            link.classList.add("text-black", "hover:text-[#00cf81]");
-          });
-        } else {
-          navbar.classList.remove("bg-white", "shadow-md");
-          navbar.classList.add("bg-transparent", "bg-opacity-20");
-
-          navLinks.forEach((link) => {
-            link.classList.remove("text-black", "hover:text-[#00cf81]");
-            link.classList.add("text-white");
-          });
-        }
-      });
-
-      const menuToggle = document.getElementById("menuToggle");
-      const navLinks = document.getElementById("navLinks");
-
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("hidden");
-      });
-    </script>
-  </body>
 </html>
